@@ -2,143 +2,152 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Halaman Rahasia</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
-  <style>
-    body {
-      background-color: skyblue;
-      color: crimson;
-      font-family: 'Open Sans', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://i.pinimg.com/736x/37/9e/dc/379edc1ff046f02d6ab88b30e31db40d.jpg">
+    <title>Secret Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+    <link rel="shortcut icon" href="https://i.pinimg.com/736x/17/54/a2/1754a2851a4a572b3c5c511127dcc835.jpg" type="image/x-icon" />
+    <style>
+body {
+            background-color: skyblue;
+            color: crimson;
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-    div {
-      text-align: center;
-    }
+        div {
+            text-align: center;
+        }
 
-    input {
-      margin-bottom: 10px;
-      padding: 5px;
-      padding-right: 30px;
-      /* Tambahkan padding untuk memberi ruang pada ikon mata */
-    }
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+            padding-right: 30px;
+        }
 
-    .password-container {
-      position: relative;
-      display: inline-block;
-    }
+        .password-container {
+            position: relative;
+            display: inline-block;
+        }
 
-    .password-icon {
-      position: absolute;
-      top: 15px;
-      right: 10px;
-      transform: translateY(-50%);
-      cursor: pointer;
-    }
+        .password-icon {
+            position: absolute;
+            top: 15px;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
 
-    button {
-      background-color: crimson;
-      color: white;
-      padding: 8px 15px;
-      cursor: pointer;
-    }
+        button {
+            background-color: crimson;
+            color: white;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
 
-    /* Gaya tambahan untuk teks "Password Successful" */
-    #result.success {
-      color: green;
-    }
-  </style>
+        #result.success {
+            color: green;
+        }
+    </style>
 </head>
 
 <body>
-  <div>
-    <h2>Masukkan Password!</h2>
-    <div class="password-container">
-      <input type="password" id="password" placeholder="Your Password">
-      <i class="material-icons password-icon" onclick="togglePassword()">visibility</i>
+    <div>
+        <h2>Masukkan Password!</h2>
+        <div class="password-container">
+            <input type="password" id="password" placeholder="Your Password">
+            <i class="material-icons password-icon" onclick="togglePassword()">visibility</i>
+        </div>
+        <button id="submitButton" onclick="checkPassword()">Enter</button>
+        <p id="result"></p>
     </div>
-    <button id="submitButton" onclick="checkPassword()">Enter</button>
-    <p id="result"></p>
-  </div>
 
-  <script>
-    var wrongAttempts = 0;
-    var cooldownActive = false;
+    <script>
+        var wrongAttempts = 0;
+        var cooldownActive = false;
 
-    function checkPassword() {
-      if (cooldownActive) {
-        return; // Jika cooldown masih aktif, hentikan eksekusi
-      }
-
-      var passwordInput = document.getElementById('password');
-      var resultElement = document.getElementById('result');
-      var submitButton = document.getElementById('submitButton');
-      var enteredPassword = passwordInput.value;
-
-      if (!enteredPassword) {
-        resultElement.innerText = 'Password cannot be empty. Please enter your password.';
-        return; // Hentikan eksekusi jika password kosong
-      }
-
-      if (enteredPassword === 'peler') {
-        resultElement.innerText = 'Password Successful';
-        resultElement.classList.add('success'); // Menambahkan kelas untuk perubahan warna
-        // Ganti 'urlHalamanAnda' dengan URL halaman yang ingin Anda buka setelah login
-        window.location.href = 'https://159.223.38.69/';
-      } else {
-        wrongAttempts++;
-
-        if (wrongAttempts < 10) {
-          resultElement.innerText = 'wrong password. try again!';
-          passwordInput.value = ''; // Menyeka input setelah password salah
-        } else {
-          var waitTime = 10; // Waktu penundaan dalam detik
-          resultElement.innerHTML = 'Wrong password. Please try again in <span id="countdown">' + waitTime + '</span> seconds.';
-          passwordInput.disabled = true; // Menonaktifkan input selama penundaan
-          submitButton.disabled = true; // Menonaktifkan tombol selama penundaan
-
-          var countdown = waitTime;
-          var countdownInterval = setInterval(function () {
-            countdown--;
-            document.getElementById('countdown').innerText = countdown;
-
-            if (countdown <= 0) {
-              clearInterval(countdownInterval);
-              resultElement.innerHTML = ''; // Menghapus teks setelah penundaan selesai
-              passwordInput.disabled = false; // Mengaktifkan kembali input setelah penundaan
-              passwordInput.value = ''; // Mengosongkan input setelah penundaan selesai
-              submitButton.disabled = false; // Mengaktifkan kembali tombol setelah penundaan
-              wrongAttempts = 0; // Mengatur ulang jumlah percobaan yang salah
-              cooldownActive = false; // Menandakan bahwa cooldown telah selesai
+        function checkPassword() {
+            if (cooldownActive) {
+                return;
             }
-          }, 1000); // Interval setiap 1 detik (1000 milidetik)
 
-          cooldownActive = true; // Menandakan bahwa cooldown sedang berlangsung
+            var passwordInput = document.getElementById('password');
+            var resultElement = document.getElementById('result');
+            var submitButton = document.getElementById('submitButton');
+            var enteredPassword = passwordInput.value;
+
+            if (!enteredPassword) {
+                resultElement.innerText = 'Password cannot be empty. Please enter your password.';
+                return;
+            }
+
+            if (enteredPassword === 'aku sange') {
+                var randomLinks = [
+                    'https://159.223.38.69/',
+                    'https://ruangbokep.one/',
+                    'https://www.pornhub.com/video/search?search=douyin+chinese',
+                    'https://www.pornhub.com/video/search?search=japanese+porn',
+                    // Tambahkan lebih banyak URL sesuai kebutuhan
+                ];
+
+                var randomIndex = Math.floor(Math.random() * randomLinks.length);
+                var randomLink = randomLinks[randomIndex];
+
+                resultElement.innerText = 'Password Successful';
+                resultElement.classList.add('success');
+                window.location.href = randomLink;
+            } else {
+                wrongAttempts++;
+
+                if (wrongAttempts < 10) {
+                    resultElement.innerText = 'wrong password. try again!';
+                    passwordInput.value = '';
+                } else {
+                    var waitTime = 10;
+                    resultElement.innerHTML = 'Wrong password. Please try again in <span id="countdown">' + waitTime + '</span> seconds.';
+                    passwordInput.disabled = true;
+                    submitButton.disabled = true;
+
+                    var countdown = waitTime;
+                    var countdownInterval = setInterval(function () {
+                        countdown--;
+                        document.getElementById('countdown').innerText = countdown;
+
+                        if (countdown <= 0) {
+                            clearInterval(countdownInterval);
+                            resultElement.innerHTML = '';
+                            passwordInput.disabled = false;
+                            passwordInput.value = '';
+                            submitButton.disabled = false;
+                            wrongAttempts = 0;
+                            cooldownActive = false;
+                        }
+                    }, 1000);
+
+                    cooldownActive = true;
+                }
+            }
         }
-      }
-    }
 
-    function togglePassword() {
-      var passwordInput = document.getElementById('password');
-      var icon = document.querySelector('.password-icon');
+        function togglePassword() {
+            var passwordInput = document.getElementById('password');
+            var icon = document.querySelector('.password-icon');
 
-      if (passwordInput.type === 'password') {
-        passwordInput
-          .type = 'text';
-        icon.textContent = 'visibility_off';
-      } else {
-        passwordInput.type = 'password';
-        icon.textContent = 'visibility';
-      }
-    }
-  </script>
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                icon.textContent = 'visibility_off';
+            } else {
+                passwordInput.type = 'password';
+                icon.textContent = 'visibility';
+            }
+        }
+    </script>
 </body>
 
 </html>
