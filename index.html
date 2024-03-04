@@ -9,17 +9,16 @@
     <meta property="og:url" content="https://ardan.vercel.app/">
     <title>Secret Page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
     <link rel="shortcut icon" href="https://i.pinimg.com/736x/17/54/a2/1754a2851a4a572b3c5c511127dcc835.jpg" type="image/x-icon" />
     <style>
 body {
-            background-color: skyblue;
             color: crimson;
-            font-family: 'Open Sans', sans-serif;
+            font-family: sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+           background: lightblue;
+			height: 100vh;
             margin: 0;
         }
 
@@ -30,6 +29,7 @@ body {
         input {
             margin-bottom: 10px;
             padding: 5px;
+            background: white;
             padding-right: 30px;
         }
 
@@ -55,6 +55,7 @@ body {
 
         #result.success {
             color: green;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -68,6 +69,9 @@ body {
         </div>
         <button id="submitButton" onclick="checkPassword()">Enter</button>
         <p id="result"></p>
+        <footer style="color: #787878; position: relative; bottom: 10px; text-align: center; width: 100%;">
+            <p>v1.0.0</p>
+        </footer>
     </div>
 
     <script>
@@ -89,7 +93,7 @@ body {
                 return;
             }
 
-            if (enteredPassword === 'aku sange') {
+            if (enteredPassword === 'secret') {
                 var randomLinks = [
                     'https://159.223.38.69/',
                     'https://ruangbokep.one/',
@@ -111,7 +115,7 @@ body {
                     resultElement.innerText = 'wrong password. try again!';
                     passwordInput.value = '';
                 } else {
-                    var waitTime = 10;
+                    var waitTime = 30;
                     resultElement.innerHTML = 'Wrong password. Please try again in <span id="countdown">' + waitTime + '</span> seconds.';
                     passwordInput.disabled = true;
                     submitButton.disabled = true;
